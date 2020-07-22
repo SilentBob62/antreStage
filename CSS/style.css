@@ -1,0 +1,347 @@
+body{
+    margin: 0;
+    left: 0;
+    background-color: gray;
+}
+div{
+    display: flex;
+}
+
+img{
+    height: 100%;
+}
+footer{
+    height: 5vh;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+/***************************************************mise en page*/
+.column{
+    flex-direction: column;
+}
+.center{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.margeTop{
+    margin-top: 2vh;
+}
+.margeDemiTop{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.margeTopGrand {
+    margin-top: 15vh;
+}
+.margeTopDemiGrand{
+    margin-top: 7vh;
+}
+.margeTopTiersGrand {
+    margin-top: 5vh;
+}
+.margeBottom{
+    margin-bottom: 2vh;
+}
+.margeCo{
+    margin: 10vh 0;
+}
+.marge{
+    margin: 2vh 1vw;
+}
+.margeLeft{
+    margin-left: 2vw;
+}
+.margeRight{
+    margin-right: 2vw;
+}
+.border{
+    border: 3px solid rgb(255, 0, 0); 
+    border-radius: 10px;
+}
+.borderBottom{
+    border-bottom: 3px solid rgb(255, 0, 0);
+    box-shadow: 2px 2px black;
+}
+.ecritureBlanche{
+    color: white;
+}
+.ecritureGrand{
+    font-size: 4em;
+}
+.borderSimple{
+    border: black solid 5px;
+}
+.bordureRouge{
+    border:red solid 2px;
+}
+.bordureVert{
+    border:rgb(115, 255, 0) solid 2px;
+}
+.margeleft{
+    padding-left: 1vw;
+}
+/*******************************************************couleurs*/
+.blackTransparent{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.gray{
+    background-color: rgb(149, 160, 168);
+}
+.red{
+    background-color: rgb(165, 71, 71);
+}
+.fondRouge{
+    background-color: rgb(83, 11, 11);
+}
+.fondVert{
+    background-color: rgb(3, 90, 3);
+}
+.green{
+    background-color: rgb(0, 255, 0);
+}
+/*********************************************************header*/
+header{
+    display: flex;
+    height: 15vh;
+}
+.logo{
+    width: 20vw;
+}
+.titrePage{
+    width: 60vw;
+}
+/******************************************************connexion*/
+.connexion{
+    width: 70vw;
+    box-shadow: 2px 2px 2px black;
+}
+.connexionExterieur{
+    width: 80vw;
+    box-shadow: 2px 2px 2px black;
+}
+label{
+    flex: 2;
+    color: white;
+}
+input{
+    flex: 5;
+    background-color: rgb(196, 196, 196);
+    height: 3vh;
+    font-size: 1em;
+    text-align: center;
+}
+.input[class="score"]{
+    text-align: center;
+}
+.valider{
+    width: 10vw;
+    height: 4vh;
+    background-color: rgb(160, 33, 11);
+    color: white;
+}
+.valider:hover{ 
+    cursor: pointer;
+    background-color: rgb(207, 64, 39);
+}
+
+/***********************************************************menu*/
+.menuListe{
+    width: 20vw;
+    height: 4vh;
+    background-color: rgb(160, 33, 11);
+    color: white;
+}
+.menuListe:hover{ 
+    cursor: pointer;
+    background-color: rgb(207, 64, 39);
+}
+.menuListeGeneral{
+    width: 20vw;
+    height: 4vh;
+    background-color: rgb(160, 33, 11);
+    color: white;
+}
+.menuListeGeneral:hover{ 
+    cursor: pointer;
+    background-color: rgb(207, 64, 39);
+}
+.menuDansListe{
+    width: 7vw;
+    height: 4vh;
+    background-color: rgb(160, 33, 11);
+    color: white;
+}
+.menuDansListe:hover{ 
+    cursor: pointer;
+    background-color: rgb(207, 64, 39);
+}
+select{
+    flex: 5;
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    text-align: center;
+    height: 4vh;
+}
+.tournois{
+    width: 92vw;
+    box-shadow: 2px 2px 2px black;
+}
+.tournoisExterieur{
+    width: 96vw;
+    box-shadow: 2px 2px 2px black;
+}
+.case{
+    flex: 5;
+    font-size: 1em;
+}
+.caseGrand{
+    /* width: 50vw; */
+    flex: 10;
+}
+.caseDemi{
+    width: 10vw;
+}
+input[type=number]{
+    width: 5vw;
+}
+.casePetit{
+    /* width: 5vw; */
+    flex: 1;
+}
+.espace{
+    width: 10vw;
+}
+.espaceInput{
+    flex: 2;
+}
+/*********************************************************liste*/
+.entete{
+    height: 4vh;
+}
+.modif{
+    width: 7vw;
+    height: 3vh;
+    background-color: rgb(160, 33, 11);
+    color: white;
+    box-shadow: black 2px 2px 2px;
+    border-top: 2px solid rgb(160, 158, 158);
+    border-left: 2px solid rgb(160, 158, 158);
+}
+.modif:hover{ 
+    cursor: pointer;
+    background-color: rgb(207, 64, 39);
+}
+.caseListe{
+    width: 20vw;
+    height: 4vh;
+}
+.ligne:nth-child(odd){
+    background-color: rgba(0, 0, 0, 0.75);
+}
+.participants{
+    width: 98vw;
+    box-shadow: 2px 2px 2px black;
+}
+.infoTournois{
+    background-color: rgba(255, 0, 0, 0.514);
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px;
+    font-weight: bolder;
+}
+.caseFlex{
+    flex: 1;
+}
+.caseFlexQuart{
+    flex: 0.25;
+}
+.caseHeight{
+   height: 5vh;
+}
+/*****************************************************tournois*/
+.caseScore{
+    width: 15vw;
+    height: 3vh;
+}
+.joueur{
+    flex: 1;
+    justify-content: center;
+}
+.decoPool{
+    background-color: rgb(204, 9, 9);
+    width: 20vw;
+    height: 5vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px;
+    font-size: 2em;
+    font-weight: bolder;
+}
+.decoTitre{
+    background-color: rgb(0, 0, 0);
+    width: 20vw;
+    height: 5vh;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px;
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+}
+.carre{
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid red;
+    border-radius: 10px;
+    box-shadow: black 2px 2px 2px;
+    padding: 5vh 5vw ;
+    color: white;
+}
+.poolA{
+    flex: 5;
+}
+.poolB{
+    flex: 5;
+}
+.espacePool{
+    flex: 1;
+}
+.Pool{
+    width: 90vw;
+}
+.tabA{
+    width: 100%;
+}
+.tabB{
+    width: 100%;
+}
+.enteteTab{
+    width: 100%;
+}
+/***************************************************formulaire*/
+
+.formulaire{
+    width: 60vw;
+    box-shadow: 2px 2px 2px black;
+}
+.form{
+    max-height: 48vh;
+    overflow-y: scroll;
+}
+input[type=number]{
+    text-align: center;
+    font-weight: bolder;
+}
+.finaliste{
+    width: 20vw;
+    height: 3vh;
+    background-color: rgb(160, 2, 2);
+    border: 2px solid black;
+}
+.finaliste:hover{
+    background-color: rgb(233, 81, 81);
+    cursor: pointer;
+
+}
