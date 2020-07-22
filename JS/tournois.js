@@ -1,7 +1,7 @@
 /******************************************************************************************************************************************************
  * ************************************************************************************variables */
 poolB = document.getElementsByClassName("poolB");
-if (poolB.length == 1) {
+if (poolB.length == 1) {                                                               // si il y a une pool B
     numJoueurB = document.getElementsByClassName("numJoueurB");
     nombreJoueurB = document.getElementById("poolB").attributes.nombre.value;
     nombreJoueurB = parseInt(nombreJoueurB);
@@ -337,6 +337,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
         }
 /***********************************************************************************************************************************************************************************************************************
 * *****************************************************************************************************************************comparaison des scores*/
+        /***********************************score 0 est le plus grand */
         if (score0 >= score1 && score0 >= score2 && score0 >= score3 && score0 >= score4 && score0 >= score5 && score0 >= score6 && score0 >= score7) {
             id = "1" + tabJoueur[0];
             joueur = document.getElementById(id);
@@ -399,6 +400,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 1 est le plus grand */
         else if (score1 >= score0 && score1 >= score2 && score1 >= score3 && score1 >= score4 && score1 >= score5 && score1 >= score6 && score1 >= score7) {
             id = "1" + tabJoueur[1];
             joueur = document.getElementById(id);
@@ -461,6 +463,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 2 est le plus grand */
         else if (score2 >= score0 && score2 >= score1 && score2 >= score3 && score2 >= score4 && score2 >= score5 && score2 >= score6 && score2 >= score7) {
             id = "1" + tabJoueur[2];
             joueur = document.getElementById(id);
@@ -523,6 +526,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 3 est le plus grand */
         else if (score3 >= score0 && score3 >= score1 && score3 >= score2 && score3 >= score4 && score3 >= score5 && score3 >= score6 && score3 >= score7) {
             id = "1" + tabJoueur[3];
             joueur = document.getElementById(id);
@@ -585,6 +589,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 4 est le plus grand */
         else if (score4 >= score0 && score4 >= score1 && score4 >= score2 && score4 >= score3 && score4 >= score5 && score4 >= score6 && score4 >= score7) {
             id = "1" + tabJoueur[4];
             joueur = document.getElementById(id);
@@ -647,6 +652,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 5 est le plus grand */
         else if (score5 >= score0 && score5 >= score1 && score5 >= score2 && score5 >= score3 && score5 >= score4 && score5 >= score6 && score5 >= score7) {
             id = "1" + tabJoueur[5];
             joueur = document.getElementById(id);
@@ -709,6 +715,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 6 est le plus grand */
         else if (score6 >= score0 && score6 >= score1 && score6 >= score2 && score6 >= score3 && score6 >= score4 && score6 >= score5 && score6 >= score7) {
             id = "1" + tabJoueur[6];
             joueur = document.getElementById(id);
@@ -771,6 +778,7 @@ for (let a = 0; a < numJoueurA.length; a++) {
             finaliste2A.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
             finaliste2A.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
         }
+        /***********************************score 7 est le plus grand */
         else {
             id = "1" + tabJoueur[7];
             joueur = document.getElementById(id);
@@ -1125,6 +1133,7 @@ if (poolB.length == 1) {
             }
             /***********************************************************************************************************************************************************************************************************************
              * *****************************************************************************************************************************comparaison des scores*/
+            /***********************************score 0 de la pool B est le plus grand */
             if (scoreB0 >= scoreB1 && scoreB0 >= scoreB2 && scoreB0 >= scoreB3 && scoreB0 >= scoreB4 && scoreB0 >= scoreB5 && scoreB0 >= scoreB6 && scoreB0 >= scoreB7) {
                 id = "1" + tabJoueurB[0];
                 joueur = document.getElementById(id);
@@ -1184,6 +1193,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 1 de la pool B est le plus grand */
             else if (scoreB1 >= scoreB0 && scoreB1 >= scoreB2 && scoreB1 >= scoreB3 && scoreB1 >= scoreB4 && scoreB1 >= scoreB5 && scoreB1 >= scoreB6 && scoreB1 >= scoreB7) {
                 id = "1" + tabJoueurB[1];
                 joueur = document.getElementById(id);
@@ -1243,6 +1253,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 2 de la pool B est le plus grand */
             else if (scoreB2 >= scoreB0 && scoreB2 >= scoreB1 && scoreB2 >= scoreB3 && scoreB2 >= scoreB4 && scoreB2 >= scoreB5 && scoreB2 >= scoreB6 && scoreB2 >= scoreB7) {
                 id = "1" + tabJoueurB[2];
                 joueur = document.getElementById(id);
@@ -1302,6 +1313,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 3 de la pool B est le plus grand */
             else if (scoreB3 >= scoreB0 && scoreB3 >= scoreB1 && scoreB3 >= scoreB2 && scoreB3 >= scoreB4 && scoreB3 >= scoreB5 && scoreB3 >= scoreB6 && scoreB3 >= scoreB7) {
                 id = "1" + tabJoueurB[3];
                 joueur = document.getElementById(id);
@@ -1361,6 +1373,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 4 de la pool B est le plus grand */
             else if (scoreB4 >= scoreB0 && scoreB4 >= scoreB1 && scoreB4 >= scoreB2 && scoreB4 >= scoreB3 && scoreB4 >= scoreB5 && scoreB4 >= scoreB6 && scoreB4 >= scoreB7) {
                 id = "1" + tabJoueurB[4];
                 joueur = document.getElementById(id);
@@ -1420,6 +1433,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 5 de la pool B est le plus grand */
             else if (scoreB5 >= scoreB0 && scoreB5 >= scoreB1 && scoreB5 >= scoreB2 && scoreB5 >= scoreB3 && scoreB5 >= scoreB4 && scoreB5 >= scoreB6 && scoreB5 >= scoreB7) {
                 id = "1" + tabJoueurB[5];
                 joueur = document.getElementById(id);
@@ -1479,6 +1493,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 6 de la pool B est le plus grand */
             else if(scoreB6 >= scoreB0 && scoreB6 >= scoreB1 && scoreB6 >= scoreB2 && scoreB6 >= scoreB3 && scoreB6 >= scoreB4 && scoreB6 >= scoreB5 && scoreB6 >= scoreB7){
                 id = "1" + tabJoueurB[6];
                 joueur = document.getElementById(id);
@@ -1538,6 +1553,7 @@ if (poolB.length == 1) {
                 finaliste2B.setAttribute("nomJoueur",joueur.attributes.nomJoueur.value);
                 finaliste2B.setAttribute("prenomJoueur",joueur.attributes.prenomJoueur.value);
             }
+            /***********************************score 7 de la pool B est le plus grand */
             else{
                 id = "1" + tabJoueurB[7];
                 joueur = document.getElementById(id);
@@ -1605,7 +1621,7 @@ if (poolB.length == 1) {
     }
 /***********************************************************************************************************************************************************************************************
  * *******************************************************************************************************************************************phase final */
-
+    /*si on click sur le joueur qui a fini premier de la pool A*/ 
     finaliste1A.addEventListener("click", function () {
         finaliste1A = document.getElementById("1A");
         finaliste1AHtml = finaliste1A.innerHTML;
@@ -1616,6 +1632,7 @@ if (poolB.length == 1) {
         finaliste1.setAttribute("prenomJoueur",finaliste1A.attributes.prenomJoueur.value);
         finaliste3.innerHTML = finaliste2BHtml;
     });
+    /*si on click sur le joueur qui a fini deuxieme de la pool B*/ 
     finaliste2B.addEventListener("click", function () {
         finaliste1A = document.getElementById("1A");
         finaliste1AHtml = finaliste1A.innerHTML;
@@ -1626,6 +1643,7 @@ if (poolB.length == 1) {
         finaliste1.setAttribute("prenomJoueur",finaliste2B.attributes.prenomJoueur.value);
         finaliste3.innerHTML = finaliste1AHtml;
     });
+    /*si on click sur le joueur qui a fini premier de la pool B*/ 
     finaliste1B.addEventListener("click", function () {
         finaliste1B = document.getElementById("1B");
         finaliste1BHtml = finaliste1B.innerHTML;
@@ -1636,6 +1654,7 @@ if (poolB.length == 1) {
         finaliste2.setAttribute("prenomJoueur",finaliste1B.attributes.prenomJoueur.value);
         finaliste4.innerHTML = finaliste2AHtml;
     });
+    /*si on click sur le joueur qui a fini deuxieme de la pool A*/ 
     finaliste2A.addEventListener("click", function () {
         finaliste1B = document.getElementById("1B");
         finaliste1BHtml = finaliste1B.innerHTML;
@@ -1646,7 +1665,7 @@ if (poolB.length == 1) {
         finaliste2.setAttribute("prenomJoueur",finaliste2A.attributes.prenomJoueur.value);
         finaliste4.innerHTML = finaliste1BHtml;
     });
-
+    //si le gagnant est le finaliste 1
     finaliste1.addEventListener("click",function(){
         gagnant=document.getElementsByClassName("gagnant");
         gagnantNom=gagnant[0];
@@ -1655,6 +1674,7 @@ if (poolB.length == 1) {
         gagnantNom.value=finaliste1.attributes.nomJoueur.value;
         gagnantPrenom.value=finaliste1.attributes.prenomJoueur.value;
     });
+    //si le gagnant est le finaliste 2
     finaliste2.addEventListener("click",function(){
         gagnant=document.getElementsByClassName("gagnant");
         gagnantNom=gagnant[0];
@@ -1664,6 +1684,7 @@ if (poolB.length == 1) {
         gagnantPrenom.value=finaliste2.attributes.prenomJoueur.value;
     });
 }
+/**si il n'y a qu'une pool */
 if (poolB.length != 1) 
 {
     selectionGagnant=document.getElementById("fin");
@@ -1705,6 +1726,7 @@ if (poolB.length != 1)
         {
             score=score[7];     
         }
+        /**je recherche l'input caché et je le rempli */
         prenomGagnant=score.childNodes[2].nextElementSibling.innerHTML;
         nomGagnant=score.childNodes[4].nextElementSibling.innerHTML;
         gagnantNom.value=nomGagnant;
