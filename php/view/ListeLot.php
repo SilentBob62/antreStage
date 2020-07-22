@@ -9,12 +9,14 @@ if (!empty($_POST))                                 // si le $_POST n'est pas vi
     foreach($idEvenements as $idEvenement)
     {
         $id=$idEvenement;                           // on recupere l'id de l'evenement
+        // echo $id;
     }
 }
 else
 {
     $idEvenements=$_GET['idEvenement'];             // sinon on le recupere par $_GET['idEvenement']                  
     $id=$idEvenements;
+    // echo $id;
 }
 
 
@@ -23,17 +25,19 @@ $lots = LotManager::getListByIdEvenement($id);
 $evenement=EvenementManager::getById($id);
 // var_dump($evenement);
 $nombreMax=$evenement->getNbMaxJoueur();
-// var_dump($nombreParticipant) ;
+// echo $nombreMax;
 $listeLots=LotManager::getListByIdEvenement($id);   // on recupere la liste des lots par l'id de l'evenement
+// var_dump($listeLots);
 if (empty($listeLots))                              // si c'est vide, c'est qu'il n'est pas encore créé
 {
     // echo 'pas de lot';
     for($i=0;$i<$nombreMax;$i++)                    // pour chaque place dans le tournois
     {
         $a= new Lot(["idEvenement"=>$id]);
-        LotManager::add($a);                        // je créer un nouveau lot avec juste un idEvenement
-        header('location:index.php?action=ListeLot&idEvenement='.$id); // puis je redirige la page et un tableau vide (sauf pour l'idEvenement)sera créer
+        // var_dump($a);
+        LotManager::add($a);                        // je créer un nouveau lot avec juste un idEvenement    
     }
+    header('location:index.php?action=ListeLot&idEvenement='.$id); // puis je redirige la page et un tableau vide (sauf pour l'idEvenement)sera créer
 }
 
 echo '<div class="center"><div class="titreTournois marge center decoTitre">' . $evenement->getNomEvenement() . '</div></div>';
