@@ -16,7 +16,7 @@ $evenements=EvenementManager::getList();
             <div class="margeLeft margeTop">
                 <select class="margeRight" name="idEvenenment" id="idEvenenment">
                     <option value="">Selectionnez le Tournois</option>
-                <?php foreach($evenements as $evenement)
+                <?php foreach($evenements as $evenement)      // on fait une liste déroulante pour chaque Evenement
                 {
                     echo'<option value="'.$evenement->getIdEvenement().'">'.$evenement->getNomEvenement().'</option>';
                 }

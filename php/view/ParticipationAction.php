@@ -44,9 +44,9 @@ switch($mode)
         }
         break;
     case "modif": 
-        echo $b->getNomParticipant()." participant a modifier"."<br>";
+        // echo $b->getNomParticipant()." participant a modifier"."<br>";
         ParticipantManager::update($b);
-        echo $a->getIdParticipation() ." participation a modifier"."<br>";
+        // echo $a->getIdParticipation() ." participation a modifier"."<br>";
         ParticipationManager::update($a);
        
     break;

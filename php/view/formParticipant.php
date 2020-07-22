@@ -8,10 +8,10 @@
     $listePreference=PreferenceManager::getList();
 // echo $id;
 // var_dump($participation);
-if($participant->getIdPreference()!==null)
-$preference=$participant->getpreference()->getNomPreference();
+if($participant->getIdPreference()!==null)                          // si il existe une préférence
+$preference=$participant->getpreference()->getNomPreference();      // je recupere le nom de la preference
 else 
-$preference="";
+$preference="";                                                     // sinon la preference est egal a rien
     echo'
     <div class="contenu column center">
         <div class="connexion blackTransparent margeTopGrand border column">
@@ -37,11 +37,11 @@ $preference="";
                         <div class="margeLeft margeTop">
                         <label for="telParticipant">Préférence du Participant</label>
                         <select class="margeRight" name="idPreference" id="idPreference">';
-                        if($participant->getIdPreference()!==null)
+                        if($participant->getIdPreference()!==null)  // si il existe une préférence
                         echo'<option value="'.$participant->getIdPreference().'">'.$participant->getPreference()->getNomPreference().'</option>';
                         else
                         echo'<option value=""></option>';
-                        foreach($listePreference as $preference)
+                        foreach($listePreference as $preference)    // on fait une liste déroulante pour chaque preference qui existe
                         {
                             echo' <option value="'.$preference->getIdPreference().'">'.$preference->getNomPreference().'</option>';
                         }

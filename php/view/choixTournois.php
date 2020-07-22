@@ -13,8 +13,8 @@ $evenements = EvenementManager::getList();
                         <option value="">Choisisez votre tournois</option>
                         <?php
                         foreach ($evenements as $evenement) {
-                            $originalDate = $evenement->getDateEvenement();
-                            $newDate = date("d-m-Y", strtotime($originalDate));
+                            $originalDate = $evenement->getDateEvenement();      // date format originel
+                            $newDate = date("d-m-Y", strtotime($originalDate));  //format date 
                             echo '';
                             echo ' <option value="' . $evenement->getIdEvenement() . '">' . $evenement->getNomEvenement() . " du : " . $newDate  . '</option>';
                         }

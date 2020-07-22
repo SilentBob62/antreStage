@@ -3,36 +3,36 @@ if ($lvl < 1) {
     header("Location: index.php");
 }
 // var_dump($_POST);
-if (!empty($_POST))
+if (!empty($_POST))                                 // si le $_POST n'est pas vide
 {
-    $idEvenements=$_POST;
+    $idEvenements=$_POST;                           
     foreach($idEvenements as $idEvenement)
     {
-        $id=$idEvenement;
+        $id=$idEvenement;                           // on recupere l'id de l'evenement
     }
 }
 else
 {
-    $idEvenements=$_GET['idEvenement'];
+    $idEvenements=$_GET['idEvenement'];             // sinon on le recupere par $_GET['idEvenement']                  
     $id=$idEvenements;
 }
 
 
 
-$lots = LotManager::getListByIdEvenement($id);
+$lots = LotManager::getListByIdEvenement($id);     
 $evenement=EvenementManager::getById($id);
 // var_dump($evenement);
 $nombreMax=$evenement->getNbMaxJoueur();
 // var_dump($nombreParticipant) ;
-$listeLots=LotManager::getListByIdEvenement($id);
-if (empty($listeLots))
+$listeLots=LotManager::getListByIdEvenement($id);   // on recupere la liste des lots par l'id de l'evenement
+if (empty($listeLots))                              // si c'est vide, c'est qu'il n'est pas encore créé
 {
     // echo 'pas de lot';
-    for($i=0;$i<$nombreMax;$i++)
+    for($i=0;$i<$nombreMax;$i++)                    // pour chaque place dans le tournois
     {
         $a= new Lot(["idEvenement"=>$id]);
-        LotManager::add($a);
-        header('location:index.php?action=ListeLot&idEvenement='.$id); 
+        LotManager::add($a);                        // je créer un nouveau lot avec juste un idEvenement
+        header('location:index.php?action=ListeLot&idEvenement='.$id); // puis je redirige la page et un tableau vide (sauf pour l'idEvenement)sera créer
     }
 }
 
@@ -49,7 +49,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         <div class="form column">
             <?php
             $i=1;
-            foreach ($lots as $lot) {
+            foreach ($lots as $lot) { // je fais apparaitre chaque lot en laissant la possibilité de remplir la case nom du lot
                 echo '<div class="ligne ecritureBlanche column ">';
                 echo    '<form action="index.php?action=LotAction&m=modif" method = "POST">';
                 echo        '<div class="infoListe">';

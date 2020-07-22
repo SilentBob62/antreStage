@@ -30,6 +30,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                 <div class="form column">
                 <?php
                 switch ($_POST['poolA']) {
+                     /******************************************************************************************************************************************************************************************case 3 */
                     case "3":
                         echo '<div class="infoTabA bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -83,6 +84,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                             </div>
                         </div>';
                         break;
+                        /******************************************************************************************************************************************************************************************case 4 */
                     case "4":
                         echo '<div class="infoTabA bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -139,6 +141,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                             </div>
                         </div>';
                         break;
+                        /******************************************************************************************************************************************************************************************case 5 */
                     case "5":
                         echo '<div class="infoTabA bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -251,6 +254,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                             </div>
                         </div>';
                         break;
+                        /******************************************************************************************************************************************************************************************case 6 */
                     case "6":
                         echo '<div class="infoTabA bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -367,6 +371,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                         </div>
                     </div>';
                         break;
+                        /******************************************************************************************************************************************************************************************case 7 */
                     case "7":
                         echo '<div class="infoTabA bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -558,6 +563,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                         </div>
                     </div>';
                         break;
+                        /******************************************************************************************************************************************************************************************case 8 */
                     case "8":
                         echo '<div class="infoTabA bordureRouge margeTop">
                         <div class="casePetit borderSimple center fondRouge tourA">1</div>
@@ -764,7 +770,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         </div>
         <?php
         /**********************************************************************************************************************************************************************************************************************************
-         * ********************************************************************************************************************************************************************************************************************************
+         * ************************************************************************************ poolB *******************************************************************************************************************************
          * *******************************************************************************************************************************************************************************************************************************/
         if ($_POST['nbPool'] == 2)
         {
@@ -780,6 +786,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                     </div>
                     <div class="form column">';
                     switch ($_POST['poolB']) {
+                         /******************************************************************************************************************************************************************************************case 3 */
                         case "3":
                             echo '<div class="infoTabB bordureRouge margeTop">
                                 <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -833,6 +840,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                                 </div>
                             </div>';
                             break;
+                            /******************************************************************************************************************************************************************************************case 4 */
                         case "4":
                             echo '<div class="infoTabB bordureRouge margeTop">
                                 <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -889,6 +897,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                                 </div>
                             </div>';
                             break;
+                            /******************************************************************************************************************************************************************************************case 5 */
                         case "5":
                             echo '<div class="infoTabB bordureRouge margeTop">
                                 <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -1001,6 +1010,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                                 </div>
                             </div>';
                             break;
+                            /******************************************************************************************************************************************************************************************case 6 */
                         case "6":
                             echo '<div class="infoTabB bordureRouge margeTop">
                                 <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -1117,6 +1127,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                             </div>
                         </div>';
                             break;
+                            /******************************************************************************************************************************************************************************************case 7 */
                         case "7":
                             echo '<div class="infoTabB bordureRouge margeTop">
                                 <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -1308,6 +1319,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
                             </div>
                         </div>';
                             break;
+                            /******************************************************************************************************************************************************************************************case 8 */
                         case "8":
                             echo '<div class="infoTabB bordureRouge margeTop">
                             <div class="casePetit borderSimple center fondRouge tourB">1</div>
@@ -1514,7 +1526,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         </div>
         </div>';
 
-       
+       /*************************************************************************************************les scores du tournois */
 
         echo '
         <div class="listeParticipant column center margeTop ecritureBlanche">
@@ -1527,7 +1539,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         </div>
         <div class="contenuScore column blackTransparent">';
             $i = 1;
-            foreach ($participations as $participation) {
+            foreach ($participations as $participation) { // affiche un tableau avec chaque participant
                 echo '
             <div class="ligne score">
                <div class="caseScore center">'.$i.'</div>
@@ -1543,7 +1555,8 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         </div>
           </div>
           <?php
-           if ($_POST['nbPool'] == 2)
+          /*************************************************************************************************Phase finale */
+           if ($_POST['nbPool'] == 2) //si il y a 2 pool
             echo '
             <div class="carre column margeTop">
             <div class="phaseFinal">
@@ -1574,7 +1587,9 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
         </div>
         </div>' ?>
     </div>
-    <?php echo'
+    <?php 
+    /*j'utilise un formaulaire vide est caché que je rempli en javascript en cliquant sur le gagnant du tournois si il y a 2 pool sinon il se rempli apres que tout les scores sont indiqué*/
+    echo'
      <form action="index.php?action=gagnantAction&m=ajout" method="post">
           <input class="gagnant" type="text" id="nomGagnant" name="nomGagnant" hidden>
           <input class="gagnant" type="text" id="prenomGagnant" name="prenomGagnant" hidden>

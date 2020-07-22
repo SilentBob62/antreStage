@@ -24,12 +24,12 @@ if ($_POST["choix"] === '' || empty($_POST['participant'])) {
     }
     // var_dump($tabIdParticipant);
 
-    foreach ($tabIdParticipant as $idParticipant) {
+    foreach ($tabIdParticipant as $idParticipant) {   //pour chaque personne selectionné
         $participant = ParticipantManager::getById($idParticipant);
 
         $participationExistant=ParticipationManager::getListByIdParticipantIdEvenement($idEvenement,$participant->getIdParticipant());
         // var_dump( $participationExistant[0]);
-        if(!isset($participationExistant[0]))                                                                           // si il existe pas encore on créer la participation
+        if(!isset($participationExistant[0]))       // si il n'existe pas déja, permet d'eviter les doublons                                                                    // si il existe pas encore on créer la participation
         {
              // echo 'participation existe pas';
             $participation = new Participation(["idParticipant" => $participant->getIdParticipant(), "idEvenement" => $idEvenement]);

@@ -15,7 +15,7 @@ $gagnants = GagnantManager::getList();
         <div class="form column">
        
             <?php
-            foreach ($gagnants as $gagnant) {
+            foreach ($gagnants as $gagnant) { // on fait une liste déroulante pour afficher chaque gagnant
                 $originalDate = $gagnant->getEvenement()->getDateEvenement();
                 $newDate = date("d-m-Y", strtotime($originalDate));
                 echo'<div class="ligne ecritureBlanche">';

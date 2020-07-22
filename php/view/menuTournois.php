@@ -13,9 +13,9 @@ $listeEvenements = EvenementManager::getList();
                 <select name="evenement" id="evenement" required>
                     <option value=""></option>
                     <?php
-                    foreach ($listeEvenements as $evenement) {
-                        $originalDate = $evenement->getDateEvenement();
-                        $newDate = date("d-m-Y", strtotime($originalDate));
+                    foreach ($listeEvenements as $evenement) {                   // je fais une liste déroulante de chaque evenement
+                        $originalDate = $evenement->getDateEvenement();          // format date originel
+                        $newDate = date("d-m-Y", strtotime($originalDate));      // nouveau format date  
                         $tab = ParticipationManager::getCount($evenement->getIdEvenement());
                         $nombre = $tab[0];
                         echo '<option id="'. $evenement->getIdEvenement() .'" nombreInscrit="'.$nombre.'" value="' . $evenement->getIdEvenement() . '">' . $evenement->getNomEvenement() . ' / Du ' . $newDate . ' / nombre de joueur inscrit : ' . $nombre . '</option>';
@@ -32,6 +32,7 @@ $listeEvenements = EvenementManager::getList();
                 </select>
             </div>
             <div class="info marge">
+                <!-- nombre de joueur en dessous de 3 est inutile pour faire un tournois -->
                 <label for="poolA">nombre de joueur pool A</label>
                 <select name="poolA" id="poolA" required>
                     <option value=""></option>
@@ -44,6 +45,7 @@ $listeEvenements = EvenementManager::getList();
                 </select>
             </div>
             <div class="info marge">
+                <!-- nombre de joueur en dessous de 3 est inutile pour faire un tournois sauf le 0 si on fait qu'une seule pool -->
                 <label for="poolB">nombre de joueur pool B</label>
                 <select name="poolB" id="poolB" required>
                     <option value=""></option>

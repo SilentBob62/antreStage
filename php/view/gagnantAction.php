@@ -6,11 +6,11 @@ if($lvl < 1){
 
 $mode = $_GET["m"];
 $a = new Gagnant($_POST);
-var_dump($a);
-if (isset($_POST["idEvenenment"]))
+// var_dump($a);
+if (isset($_POST["idEvenenment"]))  // si le $_POST["idEvenenment"] est defini
 { 
     $idEvenement= $_POST["idEvenenment"];
-    echo $idEvenement;
+    // echo $idEvenement;
 }
 // echo $mode;
 
@@ -18,12 +18,12 @@ if (isset($_POST["idEvenenment"]))
 switch ($mode)
 {
     case "ajout":
-        if (isset($_POST["idEvenenment"]))
+        if (isset($_POST["idEvenenment"])) // si le $_POST["idEvenenment"] est defini
         {
             $gagnant=new Gagnant(["nomGagnant"=>$a->getNomGagnant(),"prenomGagnant"=>$a->getPrenomGagnant(),"idEvenement"=>$idEvenement]);
             GagnantManager::add($gagnant);
         }
-        else if ($a->getNomGagnant()!='[object HTMLInputElement]' && $a->getNomGagnant()!='')
+        else if ($a->getNomGagnant()!='[object HTMLInputElement]' && $a->getNomGagnant()!='') // si l'input est rempli est qu'il est different de rien
         {
              GagnantManager::add($a);
         }

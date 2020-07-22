@@ -7,12 +7,12 @@ if($lvl < 1){
 //  var_dump($tournois);
 
 $mode = $_GET["m"];
-if ($mode != "ajout")
+if ($mode != "ajout")                   // si le mode est modif ou suppr
 {
-    $id = $_GET["id"];
+    $id = $_GET["id"];                  // on recupere l'id de la participation
     $participation= ParticipationManager::getById($id);
 
-    if($mode == "suppr"){
+    if($mode == "suppr"){               
         header("Location: index.php?action=EvenementAction&m=suppr&id=".$id);
     }
 

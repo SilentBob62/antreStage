@@ -14,23 +14,23 @@ $idjeuBDD=$jeu->getidJeu();
 switch ($mode)
 {
     case "ajout":
-        if ($nomjeuBDD===null)
-        JeuManager::add($b); 
+        if ($nomjeuBDD===null)  // si le jeu n'existe pas dans la base de données
+        JeuManager::add($b);    // je fais un ajout
         // var_dump($a);
         // var_dump($b);
         $nomJeu=$b->getNomJeu();
-        $jeu=JeuManager::getByNomJeu($nomJeu);
+        $jeu=JeuManager::getByNomJeu($nomJeu); // on recherche le jeu qui correspond au nom du jeu
         $nomjeuBDD=$jeu->getNomJeu();
         $idjeuBDD=$jeu->getidJeu();
         $evenement = new Evenement (["nomEvenement"=>$a->getNomEvenement(), "cout"=>$a->getCout(), "nbMaxJoueur"=>$a->getNbMaxJoueur(), "dateEvenement"=>$a->getDateEvenement(), "idJeu"=>$idjeuBDD]);
         // var_dump($evenement);
-        EvenementManager::add($evenement);
+        EvenementManager::add($evenement);  // on ajoute l'evenement
         break;  
     case "modif":
         // var_dump($a);
         // var_dump($b);      
-        if ($nomjeuBDD===null)
-        JeuManager::add($b);
+        if ($nomjeuBDD===null)  // si le jeu n'existe pas dans la base de données 
+        JeuManager::add($b);    // je fais un ajout
         $nomJeu=$b->getNomJeu();
         $jeu=JeuManager::getByNomJeu($nomJeu);
         $nomjeuBDD=$jeu->getNomJeu();

@@ -7,6 +7,7 @@ if($lvl < 1){
 $mode = $_GET["m"];
 $a = new Lot($_POST);
 var_dump($a);
+// je ne fais qu'un update car le nombre de joueur reste le meme donc pas de dilete et le add est fait precedement
 LotManager::update($a);
 
 $idEvenement=$a->getIdEvenement();
