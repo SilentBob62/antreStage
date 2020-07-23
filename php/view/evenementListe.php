@@ -13,7 +13,6 @@
                 <div class="case center margeDemiTop">coût inscription</div>
                 <div class="case center margeDemiTop">Jeu</div>
                 <div class="case center margeDemiTop">date</div>
-                <div class="case center margeDemiTop">modifier</div>
                 <div class="case center margeDemiTop">supprimer</div>
             </div>
             <div class="form column"> 
@@ -24,18 +23,13 @@
                 echo '<form action="index.php?action=EvenementAction&m=modif" method = "POST">';
                 echo '<div class="infoListe">';
                 echo '<input type="text" id="IdEvenement' . $evenement->getIdEvenement() . '" name="IdEvenement" value="' . $evenement->getIdEvenement() . '" hidden>';
-                echo '<div class="case center margeDemiTop"><input type="text" id="nomEvenement' . $evenement->getNomEvenement() . '" name="nomEvenement" value="' . $evenement->getNomEvenement() . '"></div>';
-                echo '<div class="case center margeDemiTop"><input type="text" id="nbMaxJoueur' . $evenement->getNbMaxJoueur() . '" name="nbMaxJoueur" value="' . $evenement->getNbMaxJoueur() . '"></div>';
-                echo '<div class="case center margeDemiTop"><input type="text" id="cout' . $evenement->getCout() . '" name="cout" value="' .$evenement->getCout() . '"></div>';
+                echo '<div class="case center margeDemiTop"><input type="text" class="formNomEvenement input" id="nomEvenement' . $evenement->getNomEvenement() . '" name="nomEvenement" value="' . $evenement->getNomEvenement() . '"></div>';
+                echo '<div class="case center margeDemiTop"><input type="text" class="formnbMaxJoueur input" id="nbMaxJoueur' . $evenement->getNbMaxJoueur() . '" name="nbMaxJoueur" value="' . $evenement->getNbMaxJoueur() . '" pattern="[0-9]{0,2}"></div>';
+                echo '<div class="case center margeDemiTop"><input type="text" class="formCoutEvenement input" id="cout' . $evenement->getCout() . '" name="cout" value="' .$evenement->getCout() . '"></div>';
                  echo '<input type="text" id="idJeu' . $evenement->getIdJeu() . '" name="idJeu" value="' . $evenement->getIdjeu() . '"hidden>';
-                echo '<div class="case center margeDemiTop"><input type="text" id="nomJeu' . $evenement->getJeu()->getNomJeu() . '" name="nomJeu" value="' . $evenement->getJeu()->getNomJeu() . '"></div>';
-                echo '<div class="case center margeDemiTop"><input type="date" id="date' . $evenement->getDateEvenement() . '" name="dateEvenement" value="' . $evenement->getDateEvenement() . '"></div>';
-                echo '<div class="case center ">
-            <div class="bouton marge center">
-                <button class="menuDansListe" type="submit">Enregistrer</button>
-            </div>
-            </div>
-            </form>
+                echo '<div class="case center margeDemiTop"><input type="text" class="formNomJeu input" id="nomJeu' . $evenement->getJeu()->getNomJeu() . '" name="nomJeu" value="' . $evenement->getJeu()->getNomJeu() . '" ></div>';
+                echo '<div class="case center margeDemiTop"><input type="date" class="formDateEvenement input" id="date' . $evenement->getDateEvenement() . '" name="dateEvenement" value="' . $evenement->getDateEvenement() . '"></div>';
+                echo '</form>
             <form action="index.php?action=EvenementAction&m=suppr&id=' . $evenement->getIdEvenement() . '" method="POST">
                 <div class="bouton marge center">
                     <button class="menuDansListe" type="submit">supprimer</button>

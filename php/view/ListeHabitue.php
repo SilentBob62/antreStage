@@ -15,7 +15,7 @@ $evenements = EvenementManager::getList();
         <form action="index.php?action=ParticipationActionMultiple" method="POST">
 
             <div class="center marge">
-                <select name="choix" id="choix">
+                <select name="choix" id="choix" required>
                     <option value="">Choix du tournois</option>
                     <?php
                     foreach ($evenements as $evenement) {

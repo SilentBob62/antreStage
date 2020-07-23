@@ -7,26 +7,31 @@ if($mode!='suppr')
     $idEvenement=$_POST['IdEvenement'];
     // echo $idEvenement;
 }
-
-
-
+// var_dump($a);
+// var_dump($b);
+$nom=strtoupper($b->getNomParticipant());
+$prenom=ucfirst($b->getPrenomParticipant());
+$c=new Participant(["nomParticipant"=>$nom, "prenomParticipant"=>$prenom, "mailParticipant"=>$b->getMailParticipant(), "telParticipant"=>$b->getTelParticipant()]);
+// var_dump($c);
 switch($mode)
 {
     case "ajout":
-        $nom=$b->getNomParticipant();
-        $prenom=$b->getPrenomParticipant();
+        $nom=$c->getNomParticipant();
+        $prenom=$c->getPrenomParticipant();
         $personneExistantDeja=ParticipantManager::getByNomAndPrenom($nom,$prenom);     // recherche si le nom et le prenom existe deja dans la BDD
         // var_dump( $personneExistantDeja);
         if (empty($personneExistantDeja))                                              //si le participant n'existe pas
         {
-            ParticipantManager::add($b);                                           // on ajoute le participant
+            // echo "n'existe pas";
+            ParticipantManager::add($c);                                           // on ajoute le participant
             $participants=ParticipantManager::getList();
             foreach($participants as $participant)
             {
                 $idParticipant=$participant->getIdParticipant();
             }
+            echo $idParticipant;
         }
-        $participants=ParticipantManager::getByNomAndPrenom($b->getNomParticipant(),$b->getPrenomParticipant());
+        $participants=ParticipantManager::getByNomAndPrenom($c->getNomParticipant(),$c->getPrenomParticipant());
         foreach($participants as $participant)
         $idParticipant=$participant->getIdParticipant();
         // var_dump($participant);

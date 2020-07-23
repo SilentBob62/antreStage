@@ -7,14 +7,14 @@ $evenements=EvenementManager::getList();
         <form action="index.php?action=gagnantAction&m=ajout" method="post">
             <div class="margeLeft margeTop">
                 <label for="nomGagnant">Nom du gagnant</label>
-                <input class="margeRight" type="text" id="nomGagnant" name="nomGagnant" value="">
+                <input class="margeRight input" type="text" id="nomGagnant" name="nomGagnant" value="" required>
             </div>
             <div class="margeLeft margeTop">
                 <label for="prenomGagnant">Prenom du gagnant</label>
-                <input class="margeRight" type="text" id="prenomGagnant" name="prenomGagnant" value="">
+                <input class="margeRight input" type="text" id="prenomGagnant" name="prenomGagnant" value="" required>
             </div>
             <div class="margeLeft margeTop">
-                <select class="margeRight" name="idEvenenment" id="idEvenenment">
+                <select class="margeRight input" name="idEvenenment" id="idEvenenment" required>
                     <option value="">Selectionnez le Tournois</option>
                 <?php foreach($evenements as $evenement)      // on fait une liste déroulante pour chaque Evenement
                 {

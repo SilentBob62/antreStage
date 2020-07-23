@@ -71,7 +71,7 @@ CREATE TABLE participant(
         PrenomParticipant Varchar (50) NOT NULL ,
         mailParticipant   Varchar (50) ,
         telParticipant    Varchar (50) ,
-        idPreference      Int NOT NULL
+        idPreference      Int 
 )ENGINE=InnoDB;
 
 

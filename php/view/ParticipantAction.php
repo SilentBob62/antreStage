@@ -5,6 +5,7 @@ if($lvl < 1){
 }
 
 $mode = $_GET["m"];
+
 $a = new Participant($_POST);
 // var_dump($a);
 switch ($mode)
