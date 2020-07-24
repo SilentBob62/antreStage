@@ -120,6 +120,22 @@ if (isset($_GET['action'])) {
                 afficherPage('PHP/view/', 'LotAction', "formulaire des lots");
                 break;
             }
+        case 'formEnregistrementInternet': {
+                afficherPage('PHP/view/', 'formEnregistrementInternet', "formulaire d'enregistrement");
+                break;
+            }
+        case 'ParticipationActionTest': {
+                afficherPage('PHP/view/', 'ParticipationActionTest', "");
+                break;
+            }
+        case 'mail': {
+                afficherPage('PHP/view/', 'mail', "");
+                break;
+            }
+        case 'ListeJoueur': {
+                afficherPage('PHP/view/', 'ListeJoueur', "Liste Des Joueur");
+                break;
+            }
     }
 } else { // Sinon, on affiche la page principale du site
     afficherPage('PHP/view/', 'formConnection', "Connection");

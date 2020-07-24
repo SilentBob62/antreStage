@@ -27,7 +27,12 @@ $evenements = EvenementManager::getList();
             </form>
             <form action="index.php?action=ListeHabitue" method="post">
                 <div class="bouton retour marge center">
-                    <button class="menuListe" type="submit">habitués</button>
+                    <button class="menuListe" type="submit">Ajout Habitués a un evenement</button>
+                </div>
+            </form>
+            <form action="index.php?action=ListeJoueur" method="post">
+                <div class="bouton retour marge center">
+                    <button class="menuListe" type="submit">Liste Des Joueurs</button>
                 </div>
             </form>
             <form action="index.php?action=menu" method="post">

@@ -21,6 +21,12 @@ nbMaxJoueur=document.getElementsByClassName("formnbMaxJoueur");
 coutEvenement=document.getElementsByClassName("formCoutEvenement");
 nomJeu=document.getElementsByClassName("formNomJeu");
 dateEvenement=document.getElementsByClassName("formDateEvenement");
+/**********************************************************liste participants */
+nomParticipant=document.getElementsByClassName("formNomDuParticipant");
+prenomParticipant=document.getElementsByClassName("formPrenomDuParticipant");
+mailParticipant=document.getElementsByClassName("formMailDuParticipant");
+telParticipant=document.getElementsByClassName("formTelDuParticipant");
+preferenceDuParticipant=document.getElementsByClassName("formPreferenceDuParticipant");
 /********************************************************************Liste Lot */
 nomLot=document.getElementsByClassName("nomLot");
 
@@ -67,6 +73,25 @@ for(let i=0;i<nomEvenement.length;i++)
     });
     dateEvenement[i].addEventListener("change", function(){
         dateEvenement[i].form.submit();
+    });
+}
+/**********************************************************liste participants */
+for(let i=0;i<nomParticipant.length;i++)
+{
+    nomParticipant[i].addEventListener("change", function(){
+        nomParticipant[i].form.submit();
+    });
+    prenomParticipant[i].addEventListener("change", function(){
+        prenomParticipant[i].form.submit();
+    });
+    mailParticipant[i].addEventListener("change", function(){
+        mailParticipant[i].form.submit();
+    });
+    telParticipant[i].addEventListener("change", function(){
+        telParticipant[i].form.submit();
+    });
+    preferenceDuParticipant[i].addEventListener("change", function(){
+        preferenceDuParticipant[i].form.submit();
     });
 }
 /******************************************************************Liste Lot */

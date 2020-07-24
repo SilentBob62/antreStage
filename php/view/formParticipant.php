@@ -15,7 +15,7 @@ $preference="";                                                     // sinon la 
     echo'
     <div class="contenu column center">
         <div class="connexion blackTransparent margeTopGrand border column">
-            <form action="index.php?action=ParticipantAction&m=' . $mode . '" method = "POST">
+            <form action="index.php?action=ParticipantAction&m=' . $mode . '&origine=form" method = "POST">
                 <div class="column">
                         <input type="text" id="IdParticipant" name="IdParticipant" value="'.$participant->getIdParticipant().'" hidden>
                     <div class="margeLeft margeTop">

@@ -16,7 +16,7 @@ else // On check le mot de passe
     {
         $utilisateur = UtilisateurManager::getByPseudo($_POST['pseudo']); // On recherche dans la base l'utilisateur et on rempli l'objet Utilisateur
 
-        if ($utilisateur->getMdp() == md5($_POST['motDePasse'])) // Acces OK !
+        if ($utilisateur->getMdp() == md5(md5($_POST['motDePasse']))) // Acces OK !
         {
             $_SESSION['pseudo'] = $utilisateur->getPseudo();
             $_SESSION['id'] = $utilisateur->getIdUtilisateur();

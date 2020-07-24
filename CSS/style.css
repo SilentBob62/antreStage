@@ -257,6 +257,15 @@ input[type=number]{
 }
 .caseFlex{
     flex: 1;
+    min-width: 200px;
+}
+.caseFlexSuppr{
+    flex: 1;
+    min-width:100px;
+}
+.caseFlexCheck{
+    flex: 1;
+    min-width: 50px;
 }
 .caseFlexQuart{
     flex: 0.25;
@@ -347,4 +356,31 @@ input[type=number]{
     background-color: rgb(233, 81, 81);
     cursor: pointer;
 
+}
+@media (max-width: 1200px) 
+{
+.ecritureGrand{
+    font-size: 2em;
+}
+.decoTitre{
+    font-size: 1.5em;
+    width: 40vw;
+}
+.input{
+    flex: 5;
+    background-color: rgb(196, 196, 196);
+    height: 3vh;
+    font-size: 0.8em;
+    text-align: center;
+}
+.caseFlex{
+    flex: 1;
+    min-width: 140px;
+}
+.menuDansListe{
+font-size: 0.7em;
+}
+.espacePool{
+    flex: 0.5;
+}
 }

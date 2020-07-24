@@ -75,7 +75,7 @@ return $participant;
  {
  $db = DbConnect::getDb();
  $participant = [];
- $q = $db->query("SELECT * FROM participant ORDER BY idPreference desc");
+ $q = $db->query("SELECT * FROM participant ORDER BY idPreference, nomParticipant, PrenomParticipant");
  while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
  if ($donnees != false) {
  $participant[] = new Participant($donnees);

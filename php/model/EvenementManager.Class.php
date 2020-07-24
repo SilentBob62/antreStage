@@ -71,4 +71,17 @@ return $evenement;
  return $evenement;
   }
 
+  public static function getListEvenementAJour($date)
+  {
+  $db = DbConnect::getDb();
+  $evenement = [];
+  $q = $db->query("SELECT * FROM evenement WHERE dateEvenement>$date ORDER BY dateEvenement");
+  while ($donnees = $q->fetch(PDO::FETCH_ASSOC)) {
+  if ($donnees != false) {
+  $evenement[] = new Evenement($donnees);
+  }
+  }
+  return $evenement;
+   }
+
 }

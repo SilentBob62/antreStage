@@ -20,7 +20,10 @@ switch ($mode)
     case "ajout":
         if (isset($_POST["idEvenenment"])) // si le $_POST["idEvenenment"] est defini
         {
-            $gagnant=new Gagnant(["nomGagnant"=>$a->getNomGagnant(),"prenomGagnant"=>$a->getPrenomGagnant(),"idEvenement"=>$idEvenement]);
+            $nomGagnant=strtoupper($a->getNomGagnant());
+            $prenomGagnant=strtolower($a->getPrenomGagnant());
+            $prenomGagnant=ucfirst($prenomGagnant);
+            $gagnant=new Gagnant(["nomGagnant"=>$nomGagnant,"prenomGagnant"=>$prenomGagnant,"idEvenement"=>$idEvenement]);
             GagnantManager::add($gagnant);
         }
         else if ($a->getNomGagnant()!='[object HTMLInputElement]' && $a->getNomGagnant()!='') // si l'input est rempli est qu'il est different de rien
@@ -33,4 +36,4 @@ switch ($mode)
     case "suppr":
     break;
 }
-header("location:index.php?action=menu");  
+header("location:index.php?action=listeGagnant");  

@@ -36,9 +36,9 @@ $evenements = EvenementManager::getList();
                 <div class="caseFlex center caseHeight">Prenom</div>
                 <div class="caseFlex center caseHeight">Mail</div>
                 <div class="caseFlex center caseHeight">Telephone</div>
-                <div class="caseFlex center caseHeight">Préférence</div>
-                <div class="caseFlex center caseHeight">Modifier</div>
-                <div class="caseFlex center caseHeight">Supprimer</div>
+                <div class="caseFlexCheck center caseHeight">Préférence</div>
+                <div class="caseFlexSuppr center caseHeight">Modifier</div>
+                <div class="caseFlexSuppr center caseHeight">Supprimer</div>
 
             </div>
             <div class="form column">
@@ -57,11 +57,11 @@ $evenements = EvenementManager::getList();
                             <div class="caseFlex center caseHeight">' . $participant->getPrenomParticipant() . '</div>
                             <div class="caseFlex center caseHeight">' . $participant->getMailParticipant() . '</div>
                             <div class="caseFlex center caseHeight">' . $participant->getTelParticipant() . '</div>
-                            <div class="caseFlex center caseHeight">' .$preference . '</div>
-                            <div class="caseFlex center caseHeight">
+                            <div class="caseFlexCheck center caseHeight">' .$preference . '</div>
+                            <div class="caseFlexSuppr center caseHeight">
                                 <a class="boutonModif" href="index.php?action=formParticipant&m=modif&id=' .  $participant->getIdParticipant() . '"><div class="bouton modif center">Modifier</div> </a>
                             </div>
-                            <div class="caseFlex center caseHeight">
+                            <div class="caseFlexSuppr center caseHeight">
                                 <a class="boutonModif" href="index.php?action=ParticipantAction&m=suppr&id=' .  $participant->getIdParticipant() . '"><div class="bouton modif center">supprimer</div></a>  
                             </div>
                          </div>

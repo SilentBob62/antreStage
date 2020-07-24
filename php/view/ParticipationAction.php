@@ -10,7 +10,8 @@ if($mode!='suppr')
 // var_dump($a);
 // var_dump($b);
 $nom=strtoupper($b->getNomParticipant());
-$prenom=ucfirst($b->getPrenomParticipant());
+$prenom=strtolower($b->getPrenomParticipant());
+$prenom=ucfirst($prenom);
 $c=new Participant(["nomParticipant"=>$nom, "prenomParticipant"=>$prenom, "mailParticipant"=>$b->getMailParticipant(), "telParticipant"=>$b->getTelParticipant()]);
 // var_dump($c);
 switch($mode)
@@ -49,11 +50,43 @@ switch($mode)
         }
         break;
     case "modif": 
-        // echo $b->getNomParticipant()." participant a modifier"."<br>";
-        ParticipantManager::update($b);
-        // echo $a->getIdParticipation() ." participation a modifier"."<br>";
-        ParticipationManager::update($a);
-       
+        if($b->getNomParticipant())
+        $nomParticipant=strtoupper($b->getNomParticipant());
+        else  
+        $nomParticipant=null;
+        if($b->getPrenomParticipant())
+        {
+            $prenomParticipant=strtolower($b->getPrenomParticipant());
+            $prenomParticipant=ucfirst($prenomParticipant);
+        }
+        else 
+        $prenomParticipant=null;
+        if($b->getMailParticipant())
+        $mailParticipant=$b->getMailParticipant();
+        else
+        $mailParticipant=null;
+        if($b->getTelParticipant())
+        $telParticipant=$b->getTelParticipant();
+        else
+        $telParticipant=null;
+        $joueur=new Participant(["idParticipant"=>$b->getIdParticipant(),"nomParticipant"=>$nomParticipant,"prenomParticipant"=>$prenomParticipant,"mailParticipant"=>$mailParticipant,"telParticipant"=>$telParticipant]);
+        ParticipantManager::update($joueur);
+
+        if($a->getPrevenu())
+        $prevenu=$a->getPrevenu();
+        else
+        $prevenu=null;
+        if($a->getPresence())
+        $presence=$a->getPresence();
+        else
+        $presence=null;
+        if($a->getReglement())
+        $reglement=$a->getReglement();
+        else
+        $reglement=null;
+        $participe=new Participation(["idParticipation"=>$a->getIdParticipation(),"idParticipant"=>$b->getIdParticipant(),"idEvenement"=>$idEvenement,"prevenu"=>$prevenu,"presence"=>$presence,"reglement"=>$reglement]);
+        ParticipationManager::update( $participe);
+    //    var_dump($participe);
     break;
     case "suppr":
         $a->setIdParticipation($_GET["id"]);

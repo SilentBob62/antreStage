@@ -7,13 +7,41 @@ if($lvl < 1){
 $mode = $_GET["m"];
 
 $a = new Participant($_POST);
-// var_dump($a);
+$b=new Preference($_POST);
 switch ($mode)
 {
+    case "ajout":
+        ParticipantManager::add($a);
     case "modif":
+        if($a->getNomParticipant())
+        $nomParticipant=strtoupper($a->getNomParticipant());
+        else  
+        $nomParticipant=null;
+        if($a->getPrenomParticipant())
+        {
+            $prenomParticipant=strtolower($a->getPrenomParticipant());
+            $prenomParticipant=ucfirst($prenomParticipant);
+        }
+        else 
+        $prenomParticipant=null;
+        if($a->getMailParticipant())
+        $mailParticipant=$a->getMailParticipant();
+        else
+        $mailParticipant=null;
+        if($a->getTelParticipant())
+        $telParticipant=$a->getTelParticipant();
+        else
+        $telParticipant=null;
+        if($a->getIdPreference())
+        $idpreference=$a->getIdPreference();
+        else
+        $idpreference=null;
+        $joueur=new Participant(["idParticipant"=>$a->getIdParticipant(),"nomParticipant"=>$nomParticipant,"prenomParticipant"=>$prenomParticipant,"mailParticipant"=>$mailParticipant,"telParticipant"=>$telParticipant,"idPreference"=>$idpreference]);
+        // var_dump($joueur);
+        ParticipantManager::update($joueur);
         // echo $mode;
         // var_dump($a);
-        ParticipantManager::update($a);
+        // ParticipantManager::update($a);
         break;  
     case "suppr":                                                                            // si on supprime un participant
         // echo $mode;
@@ -33,4 +61,7 @@ switch ($mode)
         ParticipantManager::delete($b);                                                       // puis je supprime le participant      
         break;
 }
+if ($_GET["origine"]=="form")
 header('location:index.php?action=ListeHabitue'); 
+else
+header('location:index.php?action=ListeJoueur'); 

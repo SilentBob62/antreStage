@@ -10,6 +10,7 @@ $gagnants = GagnantManager::getList();
             <div class="caseFlex center caseHeight">Nom</div>
             <div class="caseFlex center caseHeight">Prenom</div>
             <div class="caseFlex center caseHeight">nom Evenement</div>
+            <div class="caseFlex center caseHeight">nom Jeu</div>
             <div class="caseFlex center caseHeight">date Evenement</div>
         </div>
         <div class="form column">
@@ -22,6 +23,7 @@ $gagnants = GagnantManager::getList();
                 echo ' <div class="caseFlex center caseHeight">' . $gagnant->getNomGagnant() . '</div>';
                 echo ' <div class="caseFlex center caseHeight">' . $gagnant->getPrenomGagnant() . '</div>';
                 echo ' <div class="caseFlex center caseHeight">' . $gagnant->getEvenement()->getNomEvenement() . '</div>';
+                echo ' <div class="caseFlex center caseHeight">' . $gagnant->getEvenement()->getJeu()->getNomJeu() . '</div>';
                 echo ' <div class="caseFlex center caseHeight">' . $newDate . '</div>';
                 echo ' </div>';
             }

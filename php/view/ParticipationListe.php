@@ -29,14 +29,14 @@
   <div class="contenu column center">
       <div class="participants blackTransparent margeTopTiersGrand border column">
           <div class="entete red ecritureBlanche">
-              <div class="case center ">nom Participant</div>
-              <div class="case center ">prenom Participant</div>
-              <div class="case center ">mail Participant</div>
-              <div class="case center ">telephone Participant</div>
-              <div class="case center ">prevenenu par mail</div>
-              <div class="case center ">presence participant</div>
-              <div class="case center ">payé</div>
-              <div class="case center ">supprimer</div>
+              <div class="caseFlex center ">nom Participant</div>
+              <div class="caseFlex center ">prenom Participant</div>
+              <div class="caseFlex center ">mail Participant</div>
+              <div class="caseFlex center ">telephone Participant</div>
+              <div class="caseFlexCheck center ">mail</div>
+              <div class="caseFlexCheck center ">presence</div>
+              <div class="caseFlexCheck center ">payé</div>
+              <div class="caseFlexSuppr center ">supprimer</div>
           </div>
           <div class="form column">
               <?php
@@ -45,28 +45,28 @@
                     echo '<form action="index.php?action=ParticipationAction&m=modif" method = "POST">';
                     echo '<div class="infoListe"';
                     echo '<input type="text" id="IdParticipant' . $participation->getIdParticipant() . '" name="IdParticipant" value="' . $participation->getIdParticipant() . '" hidden>';
-                    echo '<div class="case center "><input type="text" class="formNomParticipant input" id="nomParticipant' . $participation->getIdParticipant() . '" name="nomParticipant" value="' . $participation->getParticipant()->getNomParticipant() . '"></div>';
+                    echo '<div class="caseFlex center "><input type="text" class="formNomParticipant input" id="nomParticipant' . $participation->getIdParticipant() . '" name="nomParticipant" value="' . $participation->getParticipant()->getNomParticipant() . '"></div>';
                     echo '<input type="text" id="IdParticipant' . $participation->getIdParticipant() . '" name="IdParticipant" value="' . $participation->getIdParticipant() . '" hidden>';
                     echo '<input type="text" id="IdParticipation' . $participation->getIdParticipant() . '" name="IdParticipation" value="' . $participation->getIdParticipation() . '" hidden>';
                     echo '<input type="text" id="IdEvenement" name="IdEvenement" hidden value = "' . $tournois . '">';
-                    echo '<div class="case center "><input type="text" class="formPrenomParticipant  input" id="prenomParticipant' . $participation->getIdParticipant() . '" name="prenomParticipant" value="' . $participation->getParticipant()->getPrenomParticipant() . '"></div>';
-                    echo '<div class="case center "><input type="text" class="formMailParticipant  input" id="mailParticipant' . $participation->getIdParticipant() . '" name="mailParticipant" value="' . $participation->getParticipant()->getMailParticipant() . '"></div>';
-                    echo '<div class="case center "><input type="text" class="formTelParticipant  input" id="telParticipant' . $participation->getIdParticipant() . '" name="telParticipant" value="' . $participation->getParticipant()->getTelParticipant() . '"></div>';
+                    echo '<div class="caseFlex center "><input type="text" class="formPrenomParticipant  input" id="prenomParticipant' . $participation->getIdParticipant() . '" name="prenomParticipant" value="' . $participation->getParticipant()->getPrenomParticipant() . '"></div>';
+                    echo '<div class="caseFlex center "><input type="text" class="formMailParticipant  input" id="mailParticipant' . $participation->getIdParticipant() . '" name="mailParticipant" value="' . $participation->getParticipant()->getMailParticipant() . '"></div>';
+                    echo '<div class="caseFlex center "><input type="text" class="formTelParticipant  input" id="telParticipant' . $participation->getIdParticipant() . '" name="telParticipant" value="' . $participation->getParticipant()->getTelParticipant() . '"></div>';
                     echo '<input type="text" id="idPreference' . $participation->getParticipant()->getIdPreference() . '" name="idPreference" value="' . $participation->getParticipant()->getIdPreference() . '" hidden>';
                     echo '';
-                    echo '<div class="case center "><input class="checkbox margeRight formPrevenu" type="checkbox" id="prevenu' . $participation->getIdParticipant() . '" name="prevenu"';
+                    echo '<div class="caseFlexCheck center "><input class="checkbox formPrevenu" type="checkbox" id="prevenu' . $participation->getIdParticipant() . '" name="prevenu"';
                     if ($participation->getPrevenu()) echo 'checked';
                     echo '></div>';
-                    echo '<div class="case center "><input class="checkbox margeRight formPresence" type="checkbox" id="Presence' . $participation->getIdParticipant() . '" name="Presence"';
+                    echo '<div class="caseFlexCheck center "><input class="checkbox formPresence" type="checkbox" id="Presence' . $participation->getIdParticipant() . '" name="Presence"';
                     if ($participation->getPresence()) echo 'checked';
                     echo '></div>';
-                    echo '<div class="case center "><input class="checkbox margeRight formReglement" type="checkbox" id="Reglement' . $participation->getIdParticipant() . '" name="Reglement"';
+                    echo '<div class="caseFlexCheck center "><input class="checkbox formReglement" type="checkbox" id="Reglement' . $participation->getIdParticipant() . '" name="Reglement"';
                     if ($participation->getReglement()) echo 'checked';
                     echo '></div>';
                     echo '
                 </form>
-                <form action="index.php?action=ParticipationAction&m=suppr&id=' . $participation->getIdParticipation() . '&idEvenement=' . $tournois . '" method="POST">
-                    <div class="bouton marge center">
+                <form class="caseFlexSuppr" action="index.php?action=ParticipationAction&m=suppr&id=' . $participation->getIdParticipation() . '&idEvenement=' . $tournois . '" method="POST">
+                    <div class="caseFlexSuppr bouton marge center">
                         <button class="menuDansListe" type="submit">supprimer</button>
                     </div>
                 </form>
@@ -78,10 +78,16 @@
           </div>
           <div class="center">
               <div class="boutons">
+                  <form action="index.php?action=ParticipationAction&m=ajout" method="POST">
+                      <div class="bouton marge">
+                          <input type="text" id="IdEvenement" name="IdEvenement" hidden value="<?php echo $tournois ?>">
+                          <button class="menuListe" type="submit">Ajouter</button>
+                      </div>
+                  </form>
                   <form action="index.php?action=formParticipation&m=ajout" method="POST">
                       <div class="bouton marge">
                           <input type="text" id="numEvenement" name="numEvenement" hidden value="<?php echo $tournois ?>">
-                          <button class="menuListe" type="submit">Ajouter</button>
+                          <button class="menuListe" type="submit">Ajouter une personne deja enregistré</button>
                       </div>
                   </form>
                   <form action="index.php?action=ListeLot" method="post">
