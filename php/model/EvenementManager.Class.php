@@ -4,24 +4,26 @@ class EvenementManager
 public static function add(Evenement $obj)
 {
 $db = DbConnect::getDb();
-$q = $db->prepare("INSERT INTO evenement (nomEvenement,cout,nbMaxJoueur,dateEvenement,idJeu) VALUES (:nomEvenement,:cout,:nbMaxJoueur,:dateEvenement,:idJeu)");
+$q = $db->prepare("INSERT INTO evenement (nomEvenement,cout,nbMaxJoueur,dateEvenement,idJeu,informationsupplementaire) VALUES (:nomEvenement,:cout,:nbMaxJoueur,:dateEvenement,:idJeu,:informationsupplementaire)");
 $q->bindValue(":nomEvenement", $obj->getNomEvenement());
 $q->bindValue(":cout", $obj->getCout());
 $q->bindValue(":nbMaxJoueur", $obj->getNbMaxJoueur());
 $q->bindValue(":dateEvenement", $obj->getDateEvenement());
 $q->bindValue(":idJeu", $obj->getIdJeu());
+$q->bindValue(":informationsupplementaire", $obj->getInformationsupplementaire());
  $q->execute();
 }
 
 public static function update(Evenement $obj)
 {
 $db = DbConnect::getDb();
-$q = $db->prepare("UPDATE evenement SET nomEvenement=:nomEvenement, cout=:cout, nbMaxJoueur=:nbMaxJoueur, dateEvenement=:dateEvenement, idJeu=:idJeu WHERE idEvenement=:idEvenement");
+$q = $db->prepare("UPDATE evenement SET nomEvenement=:nomEvenement, cout=:cout, nbMaxJoueur=:nbMaxJoueur, dateEvenement=:dateEvenement, idJeu=:idJeu , informationsupplementaire=:informationsupplementaire WHERE idEvenement=:idEvenement");
 $q->bindValue(":nomEvenement", $obj->getNomEvenement());
 $q->bindValue(":cout", $obj->getCout());
 $q->bindValue(":nbMaxJoueur", $obj->getNbMaxJoueur());
 $q->bindValue(":dateEvenement", $obj->getDateEvenement());
 $q->bindValue(":idJeu", $obj->getIdJeu());
+$q->bindValue(":informationsupplementaire", $obj->getInformationsupplementaire());
 $q->bindValue(":idEvenement", $obj->getIdEvenement());
  $q->execute();
 }

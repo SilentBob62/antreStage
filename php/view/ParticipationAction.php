@@ -45,7 +45,7 @@ switch($mode)
         if(empty($participationExistant))
         {
             // echo 'n existe pas encore';
-            $participation=new Participation(["idParticipant"=>$personne->getIdParticipant(), "idEvenement"=>$idEvenement,"prevenu"=>$a->getPrevenu(), "presence"=>$a->getPresence(), "reglement"=>$a->getReglement()]);
+            $participation=new Participation(["idParticipant"=>$personne->getIdParticipant(), "idEvenement"=>$idEvenement,"prevenu"=>$a->getPrevenu(), "presence"=>$a->getPresence(), "reglement"=>$a->getReglement(),"info"=>$a->getInfo()]);
             ParticipationManager::add($participation);
         }
         break;
@@ -76,15 +76,23 @@ switch($mode)
         $prevenu=$a->getPrevenu();
         else
         $prevenu=null;
+
         if($a->getPresence())
         $presence=$a->getPresence();
         else
         $presence=null;
+
         if($a->getReglement())
         $reglement=$a->getReglement();
         else
         $reglement=null;
-        $participe=new Participation(["idParticipation"=>$a->getIdParticipation(),"idParticipant"=>$b->getIdParticipant(),"idEvenement"=>$idEvenement,"prevenu"=>$prevenu,"presence"=>$presence,"reglement"=>$reglement]);
+
+        if($a->getInfo())
+        $info=$a->getInfo();
+        else
+        $info=null;
+
+        $participe=new Participation(["idParticipation"=>$a->getIdParticipation(),"idParticipant"=>$b->getIdParticipant(),"idEvenement"=>$idEvenement,"prevenu"=>$prevenu,"presence"=>$presence,"reglement"=>$reglement,"info"=>$info]);
         ParticipationManager::update( $participe);
     //    var_dump($participe);
     break;

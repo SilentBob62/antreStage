@@ -22,7 +22,7 @@ switch ($mode)
         $jeu=JeuManager::getByNomJeu($nomJeu); // on recherche le jeu qui correspond au nom du jeu
         $nomjeuBDD=$jeu->getNomJeu();
         $idjeuBDD=$jeu->getidJeu();
-        $evenement = new Evenement (["nomEvenement"=>$a->getNomEvenement(), "cout"=>$a->getCout(), "nbMaxJoueur"=>$a->getNbMaxJoueur(), "dateEvenement"=>$a->getDateEvenement(), "idJeu"=>$idjeuBDD]);
+        $evenement = new Evenement (["nomEvenement"=>$a->getNomEvenement(), "cout"=>$a->getCout(), "nbMaxJoueur"=>$a->getNbMaxJoueur(), "dateEvenement"=>$a->getDateEvenement(), "idJeu"=>$idjeuBDD, "informationSupplementaire"=>$a->getInformationSupplementaire()]);
         EvenementManager::add($evenement);  // on ajoute l'evenement
         break;  
     case "modif":
@@ -53,8 +53,13 @@ switch ($mode)
         $idjeuBDD=$jeu->getidJeu();
         else
         $idjeuBDD=null;
-        $evenement = new Evenement (["idEvenement"=>$a->getIdEvenement(), "nomEvenement"=>$nomEvenement, "cout"=>$coutEvenement, "nbMaxJoueur"=>$nbMax, "dateEvenement"=>$date, "idJeu"=>$idjeuBDD]);
-        // var_dump($evenement);
+        if($a->getInformationSupplementaire()!="")
+        $informationSupplementaire=$a->getInformationSupplementaire();
+        else
+        $informationSupplementaire=null;
+        
+        $evenement = new Evenement (["idEvenement"=>$a->getIdEvenement(), "nomEvenement"=>$nomEvenement, "cout"=>$coutEvenement, "nbMaxJoueur"=>$nbMax, "dateEvenement"=>$date, "idJeu"=>$idjeuBDD, "informationSupplementaire"=>$a->getInformationSupplementaire()]);
+        var_dump($evenement);
         EvenementManager::update($evenement);
         break;  
     case "suppr":

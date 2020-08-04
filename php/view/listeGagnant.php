@@ -12,6 +12,7 @@ $gagnants = GagnantManager::getList();
             <div class="caseFlex center caseHeight">nom Evenement</div>
             <div class="caseFlex center caseHeight">nom Jeu</div>
             <div class="caseFlex center caseHeight">date Evenement</div>
+            <div class="caseFlex center caseHeight">supprimer</div>
         </div>
         <div class="form column">
        
@@ -25,6 +26,9 @@ $gagnants = GagnantManager::getList();
                 echo ' <div class="caseFlex center caseHeight">' . $gagnant->getEvenement()->getNomEvenement() . '</div>';
                 echo ' <div class="caseFlex center caseHeight">' . $gagnant->getEvenement()->getJeu()->getNomJeu() . '</div>';
                 echo ' <div class="caseFlex center caseHeight">' . $newDate . '</div>';
+                echo'<div class="caseFlexSuppr center caseHeight">
+                        <a class="boutonModif" href="index.php?action=gagnantAction&m=suppr&id=' .  $gagnant->getIdGagnant() . '"><div class="bouton modif center">supprimer</div></a>  
+                     </div>';
                 echo ' </div>';
             }
 

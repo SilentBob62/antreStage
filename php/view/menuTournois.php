@@ -7,7 +7,7 @@ $listeEvenements = EvenementManager::getList();
 <div class="contenu column center">
 <div class="tournoisExterieur blackTransparent margeTopGrand border column ecritureBlanche  center">
     <div class="tournois blackTransparent border column ecritureBlanche  margeCo">
-        <form action="index.php?action=tournois" method="post">
+        <form action="index.php?action=tournoi" method="post">
             <div class="info marge">
                 <label for="nomTournois">selection tournois</label>
                 <select name="evenement" id="evenement" required>

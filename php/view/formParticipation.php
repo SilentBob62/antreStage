@@ -31,14 +31,6 @@ echo '<div class="contenu column center">
                         <label for="prenomParticipant">prenom Participant</label>
                         <input class="margeRight input" type="text" id="prenomParticipant" name="prenomParticipant" placeholder="Prenom du Participant"  required autofocus>
                     </div>';
-                    echo'<div class="margeLeft margeTop">
-                        <label for="mailParticipant">mail Participant</label>
-                        <input class="margeRight input" type="text" id="mailParticipant" name="mailParticipant">
-                    </div>';
-                    echo '<div class="margeLeft margeTop">
-                        <label for="telParticipant">telephone Participant</label>
-                        <input class="margeRight input" type="text" id="telParticipant" name="telParticipant" >
-                    </div>';
                     echo '<div class="margeLeft margeTop">
                         <label for="prevenu">prevenu par mail</label>
                         <input class="margeRight" type="checkbox" id="prevenu" name="prevenu">

@@ -92,6 +92,10 @@ if (isset($_GET['action'])) {
                 afficherPage('PHP/view/', 'tournois', "Tournois");
                 break;
             }
+        case 'tournoi': {
+                afficherPage('PHP/view/', 'tournoi', "Tournoi");
+                break;
+            }
         case 'ParticipantAction': {
                 afficherPage('PHP/view/', 'ParticipantAction', "");
                 break;
@@ -124,16 +128,20 @@ if (isset($_GET['action'])) {
                 afficherPage('PHP/view/', 'formEnregistrementInternet', "formulaire d'enregistrement");
                 break;
             }
-        case 'ParticipationActionTest': {
-                afficherPage('PHP/view/', 'ParticipationActionTest', "");
-                break;
-            }
         case 'mail': {
                 afficherPage('PHP/view/', 'mail', "");
                 break;
             }
         case 'ListeJoueur': {
                 afficherPage('PHP/view/', 'ListeJoueur', "Liste Des Joueur");
+                break;
+            }
+        case 'joueurAction': {
+                afficherPage('PHP/view/', 'joueurAction', "");
+                break;
+            }
+        case 'dupliquerEvenement': {
+                afficherPage('PHP/view/', 'dupliquerEvenement', "");
                 break;
             }
     }

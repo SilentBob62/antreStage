@@ -9,6 +9,7 @@ private $_nbMaxJoueur;
 private $_dateEvenement;
 private $_idJeu;
 private $_jeu;
+private $_informationSupplementaire;
 
 /******************************Accesseurs*******************************/
 public function getIdEvenement()
@@ -68,6 +69,15 @@ public function getJeu()
 public function setJeu($_jeu)
 {
  return $this->_jeu = $_jeu;
+}
+public function getInformationSupplementaire()
+{
+return $this->_informationSupplementaire;
+}
+public function setInformationSupplementaire($_informationSupplementaire)
+{
+$this->_informationSupplementaire = $_informationSupplementaire;
+return $this;
 }
 
 /*******************************Construct*******************************/

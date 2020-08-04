@@ -44,7 +44,7 @@ echo '<div class="center"><div class="titreTournois marge center decoTitre">' . 
 
 ?>
 <div class="contenu column center">
-    <div class="tournois blackTransparent margeTopGrand border column">
+    <div class="tournois blackTransparent margeTopTiersGrand border column">
         <div class="entete red ecritureBlanche">
             <div class="casePetit center margeDemiTop">classement</div>
             <div class="case center margeDemiTop">lot</div>

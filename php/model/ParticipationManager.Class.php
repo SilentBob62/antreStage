@@ -4,24 +4,26 @@ class ParticipationManager
     public static function add(Participation $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("INSERT INTO participation (idParticipant,idEvenement,prevenu,presence,reglement) VALUES (:idParticipant,:idEvenement,:prevenu,:presence,:reglement)");
+        $q = $db->prepare("INSERT INTO participation (idParticipant,idEvenement,prevenu,presence,reglement,info) VALUES (:idParticipant,:idEvenement,:prevenu,:presence,:reglement,:info)");
         $q->bindValue(":idParticipant", $obj->getIdParticipant());
         $q->bindValue(":idEvenement", $obj->getIdEvenement());
         $q->bindValue(":prevenu", $obj->getPrevenu());
         $q->bindValue(":presence", $obj->getPresence());
         $q->bindValue(":reglement", $obj->getReglement());
+        $q->bindValue(":info", $obj->getInfo());
         $q->execute();
     }
 
     public static function update(Participation $obj)
     {
         $db = DbConnect::getDb();
-        $q = $db->prepare("UPDATE participation SET idParticipant=:idParticipant, idEvenement=:idEvenement, prevenu=:prevenu, presence=:presence, reglement=:reglement WHERE idParticipation=:idParticipation");
+        $q = $db->prepare("UPDATE participation SET idParticipant=:idParticipant, idEvenement=:idEvenement, prevenu=:prevenu, presence=:presence, reglement=:reglement, info=:info  WHERE idParticipation=:idParticipation");
         $q->bindValue(":idParticipant", $obj->getIdParticipant());
         $q->bindValue(":idEvenement", $obj->getIdEvenement());
         $q->bindValue(":prevenu", $obj->getPrevenu());
         $q->bindValue(":presence", $obj->getPresence());
         $q->bindValue(":reglement", $obj->getReglement());
+        $q->bindValue(":info", $obj->getInfo());
         $q->bindValue(":idParticipation", $obj->getIdParticipation());
         $q->execute();
     }

@@ -34,6 +34,8 @@ switch ($mode)
     case "modif":
     break;
     case "suppr":
+        $b= GagnantManager::getById($_GET["id"]);                                        // je recupere l'id du gagnant
+        GagnantManager::delete($b);                                                      // je supprime le gagnant
     break;
 }
 header("location:index.php?action=listeGagnant");  

@@ -23,11 +23,19 @@
           <div class="marge"><?php echo "Nombre Max Joueur : " . $evenement->getNbMaxJoueur() ?></div>
           <div class="marge"><?php echo "Nombre de joueur dans la liste : " . $nombreParticipant[0]  ?></div>
       </div>
-
-
-  </div>
+<?php
+echo'
+      <form action="index.php?action=dupliquerEvenement&idEvenement='.$tournois.'" method="post">
+            <div class="bouton retour marge">
+                <button class="menuListe" type="submit">dupliquer evenement</button>
+            </div>
+       </form>';
+       ?>
+  </div> 
+  <?php
+  echo'
   <div class="contenu column center">
-      <div class="participants blackTransparent margeTopTiersGrand border column">
+      <div class="participants blackTransparent border column">
           <div class="entete red ecritureBlanche">
               <div class="caseFlex center ">nom Participant</div>
               <div class="caseFlex center ">prenom Participant</div>
@@ -35,11 +43,13 @@
               <div class="caseFlex center ">telephone Participant</div>
               <div class="caseFlexCheck center ">mail</div>
               <div class="caseFlexCheck center ">presence</div>
-              <div class="caseFlexCheck center ">payé</div>
-              <div class="caseFlexSuppr center ">supprimer</div>
+              <div class="caseFlexCheck center ">payé</div>';
+              if($evenement->getInformationSupplementaire())
+              echo'<div class="caseFlexCheck center ">'.$evenement->getInformationSupplementaire().'</div>';
+              echo'<div class="caseFlexSuppr center ">supprimer</div>
           </div>
-          <div class="form column">
-              <?php
+          <div class="form column">';
+             
                 foreach ($participations as $participation) {
                     echo '<div class="ligne ecritureBlanche column ">';
                     echo '<form action="index.php?action=ParticipationAction&m=modif" method = "POST">';
@@ -63,6 +73,7 @@
                     echo '<div class="caseFlexCheck center "><input class="checkbox formReglement" type="checkbox" id="Reglement' . $participation->getIdParticipant() . '" name="Reglement"';
                     if ($participation->getReglement()) echo 'checked';
                     echo '></div>';
+                    echo '<div class="caseFlex center "><input type="text" class="formInfo  input" id="info' . $participation->getInfo() . '" name="info" value="' . $participation->getinfo() . '"></div>';
                     echo '
                 </form>
                 <form class="caseFlexSuppr" action="index.php?action=ParticipationAction&m=suppr&id=' . $participation->getIdParticipation() . '&idEvenement=' . $tournois . '" method="POST">

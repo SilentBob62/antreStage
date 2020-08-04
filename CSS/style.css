@@ -333,7 +333,10 @@ input[type=number]{
     width: 100%;
 }
 /***************************************************formulaire*/
-
+.formScore{
+    flex: 1;
+    display: flex;
+}
 .formulaire{
     width: 60vw;
     box-shadow: 2px 2px 2px black;
@@ -357,7 +360,8 @@ input[type=number]{
     cursor: pointer;
 
 }
-@media (max-width: 1200px) 
+/*********************media query sur une largeur max de 1200px***********************************************************************************************************/
+@media (max-width: 1550px) 
 {
 .ecritureGrand{
     font-size: 2em;

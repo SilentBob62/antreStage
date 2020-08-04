@@ -13,6 +13,7 @@
                 <div class="caseFlex center margeDemiTop">coût inscription</div>
                 <div class="caseFlex center margeDemiTop">Jeu</div>
                 <div class="caseFlex center margeDemiTop">date</div>
+                <div class="caseFlex center margeDemiTop">colonne supplementaire</div>
                 <div class="caseFlexSuppr center margeDemiTop">supprimer</div>
             </div>
             <div class="form column"> 
@@ -32,8 +33,9 @@
                 else
                 echo '<div class="caseFlex center margeDemiTop"><input type="text" class="formNomJeu input" id="" name="nomJeu" value="" ></div>';
                 echo '<div class="caseFlex center margeDemiTop"><input type="date" class="formDateEvenement input" id="date' . $evenement->getDateEvenement() . '" name="dateEvenement" value="' . $evenement->getDateEvenement() . '"></div>';
+                echo '<div class="caseFlex center margeDemiTop"><input type="text" class="formInformationSupplementaire input" id="informationSupplementaire' . $evenement->getInformationSupplementaire() . '" name="informationSupplementaire" value="' . $evenement->getInformationSupplementaire() . '"></div>';
                 echo '</form>
-            <form class="caseFlexSuppr action="index.php?action=EvenementAction&m=suppr&id=' . $evenement->getIdEvenement() . '" method="POST">
+            <form class="caseFlexSuppr" action="index.php?action=EvenementAction&m=suppr&id=' . $evenement->getIdEvenement() . '" method="POST">
                 <div class="bouton marge center">
                     <button class="menuDansListe" type="submit">supprimer</button>
                 </div>

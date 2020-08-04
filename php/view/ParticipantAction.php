@@ -12,6 +12,7 @@ switch ($mode)
 {
     case "ajout":
         ParticipantManager::add($a);
+    break;
     case "modif":
         if($a->getNomParticipant())
         $nomParticipant=strtoupper($a->getNomParticipant());
@@ -24,18 +25,35 @@ switch ($mode)
         }
         else 
         $prenomParticipant=null;
+
+        $participants=ParticipantManager::getByNomAndPrenom($nomParticipant,$prenomParticipant);
+
+        foreach($participants as $participant)
+        {
+            $participant=$participant;
+        }
+
         if($a->getMailParticipant())
         $mailParticipant=$a->getMailParticipant();
+        else if($participant->getMailParticipant())
+        $mailParticipant=$participant->getMailParticipant();
         else
         $mailParticipant=null;
+
         if($a->getTelParticipant())
+        $telParticipant=$a->getTelParticipant();
+        else if($participant->getTelParticipant())
         $telParticipant=$a->getTelParticipant();
         else
         $telParticipant=null;
+
         if($a->getIdPreference())
         $idpreference=$a->getIdPreference();
+        else if ($participant->getIdPreference())
+        $idpreference=$participant->getIdPreference();
         else
         $idpreference=null;
+        
         $joueur=new Participant(["idParticipant"=>$a->getIdParticipant(),"nomParticipant"=>$nomParticipant,"prenomParticipant"=>$prenomParticipant,"mailParticipant"=>$mailParticipant,"telParticipant"=>$telParticipant,"idPreference"=>$idpreference]);
         // var_dump($joueur);
         ParticipantManager::update($joueur);

@@ -10,6 +10,7 @@ private $_evenement;
 private $_prevenu;
 private $_presence;
 private $_reglement;
+private $info;
 
 /******************************Accesseurs*******************************/
 public function getIdParticipation()
@@ -80,6 +81,15 @@ public function setReglement($_reglement)
 {
  return $this->_reglement = $_reglement;
 }
+public function getInfo()
+{
+return $this->info;
+}
+public function setInfo($info)
+{
+$this->info = $info;
+return $this;
+}
 
 /*******************************Construct*******************************/
 public function __construct(array $options = [])
@@ -106,7 +116,6 @@ public function toString()
 { 
  return $this->getIdParticipation() . $this->getIdParticipant() . $this->getIdEvenement() . $this->getPrevenu() . $this->getPresence() . $this->getReglement() ;
 }
-
 
 
 }
